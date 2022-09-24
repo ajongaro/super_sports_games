@@ -13,5 +13,16 @@ class Event
     @ages
   end
 
-      
+  def max_age
+    @ages.sort.last
+  end
+
+  def min_age
+    @ages.sort.first
+  end
+
+  def average_age
+    (@ages.sum.to_f / @ages.size).round(2)
+  end
+
 end
