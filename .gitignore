@@ -1,0 +1,3 @@
+# remove simplecov stuff
+/coverage
+
