@@ -1,13 +1,17 @@
-ages = [24, 30, 18, 20, 41]
 
 class StandardDeviation
-  attr_reader :result;
 
-  def initialize(array)
-    sum_divided_by_size = (array.sum.to_f / array.size)
-    array.map! { |age| (age - sum_divided_by_size)**2 }
-    @result = Math.sqrt(array.sum / array.size)
+  def initialize(ages)
+    @ages = ages
+  end
+
+  def calc
+    sum_divided_by_size = (@ages.sum.to_f / @ages.size)
+    @ages.map! { |age| (age - sum_divided_by_size)**2 }
+    return Math.sqrt(@ages.sum / @ages.size).round(2)
   end
 end
 
-p StandardDeviation.new(ages).result
+
+# ages = [1, 2, 3, 4]
+# p StandardDeviation.new(ages).calc

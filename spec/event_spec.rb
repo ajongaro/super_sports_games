@@ -1,12 +1,21 @@
 require 'rspec'
-require './lib/event'
+require_relative '../lib/event'
 
 RSpec.describe 'Event' do
 
   let(:event) { Event.new("event", [1,2,3,4]) }
+
   it 'exists' do
     event = Event.new("event", [1,2,3,4])
     expect(event).to be_a(Event)
+  end
+
+  it 'has a name' do
+    expect(event.event_name).to eq("event")
+  end
+
+  it 'has an array of ages' do
+    expect(event.ages).to eq([1,2,3,4])
   end
 
   it 'returns max age' do
@@ -18,6 +27,10 @@ RSpec.describe 'Event' do
   end
 
   it 'returns an average' do
-    expect(event.average_age).to eq(([1,2,3,4].sum.to_f/4).round(2))
+    expect(event.average_age).to eq(2.5)
+  end
+
+  it 'returns standard deviation of age' do
+    expect(event.standard_deviation_age).to eq(1.12)
   end
 end

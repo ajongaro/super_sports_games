@@ -1,4 +1,7 @@
+require_relative 'standard_deviation'
+
 class Event
+  attr_reader :event_name, :ages
 
   def initialize(event_name, ages)
     @event_name = event_name
@@ -25,4 +28,7 @@ class Event
     (@ages.sum.to_f / @ages.size).round(2)
   end
 
+  def standard_deviation_age
+    StandardDeviation.new(@ages).calc
+  end
 end
