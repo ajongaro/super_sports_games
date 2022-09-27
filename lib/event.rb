@@ -1,5 +1,3 @@
-require_relative 'standard_deviation'
-
 class Event
   def initialize(event_name, ages)
     @event_name = event_name
