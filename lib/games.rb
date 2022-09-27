@@ -1,3 +1,6 @@
+require_relative 'event'
+require_relative 'standard_deviation'
+
 class Games
   attr_reader :events,
               :year
