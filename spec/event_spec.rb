@@ -11,7 +11,7 @@ RSpec.describe 'Event' do
   end
 
   it 'has a name' do
-    expect(event.event_name).to eq("event")
+    expect(event.name).to eq("event")
   end
 
   it 'has an array of ages' do

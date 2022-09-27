@@ -27,14 +27,9 @@ class Event
   end
 
   def standard_deviation_age
-    ages_to_calc = @ages
-    mean = (ages_to_calc.sum.to_f / ages_to_calc.size)
-
-    ages_to_calc.each do |x|
-      x = (x - mean)**2
-    end
-
-    variance = (ages_to_calc.sum / ages_to_calc.size).round(2)
-    return Math.sqrt(variance)
+    mean = @ages.sum(0.0) / @ages.size
+    sum = @ages.sum(0.0) { |element| (element - mean) ** 2 }
+    variance = sum / (@ages.size)
+    return Math.sqrt(variance).round(2)
   end
 end
