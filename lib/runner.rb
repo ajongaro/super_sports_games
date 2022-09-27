@@ -51,7 +51,6 @@ until input == 'q'.downcase
       print '> '
       event_ages = gets.chomp
       event = Event.new(event_name, event_ages.split(" ").map(&:to_i))
-      require "pry"; binding.pry
       game.add_event(event)
       puts "Added #{event_name} to events!"
     elsif input.downcase == 's'
